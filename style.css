@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif; /* Use Orbitron font */
+    background: linear-gradient(to bottom, #020607, #000303); /* Even Darker greenish gradient */
+    color: #ffffff; /* White text color */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed for mobile-first design */
+    /* background-color: rgba(26, 50, 63, 0.5); Semi-transparent dark background for the form area if needed */
+    padding: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 40px; /* Add space from the top */
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.status-label {
+    background-color: #00c0a0; /* Teal-like color */
+    color: #0a1f28; /* Dark text for the label */
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 192, 160, 1); /* Initial glow for pulse - stronger */
+    animation: pulse 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 192, 160, 1);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 192, 160, 1.5);
+    }
+}
+
+.logo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    /* Styles for the logo image */
+    width: 140px; /* Increased size even further */
+    height: auto;
+    margin-right: 10px; /* Increased space */
+}
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    font-size: 2.6em; /* Slightly larger */
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.1;
+    text-shadow: 0 0 10px #ffffff; /* Glow effect */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(26, 50, 63, 0.5); /* Semi-transparent dark background for inputs */
+    border: 1px solid #00c0a0; /* Teal-like border */
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1em; /* Ensure consistent font size */
+    font-family: 'Orbitron', sans-serif; /* Ensure consistent font family */
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 192, 160, 0.5); /* Glow effect */
+    transition: box-shadow 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 192, 160, 0.8); /* More intense glow on focus */
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #cccccc; /* Lighter color for placeholders */
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00c0a0; /* Teal-like color for icons */
+    font-size: 1.2em;
+}
+
+.input-group .icon img {
+    display: block;
+    width: 45px; /* Adjust size as needed */
+    height: auto;
+    /* vertical-align: middle; Might be needed depending on exact positioning */
+}
+
+.button-group {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    margin-top: 40px; /* Increased space */
+}
+
+.button-group button {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Orbitron', sans-serif; /* Apply Orbitron font to buttons */
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px rgba(0, 192, 160, 0.5); /* Glow effect */
+}
+
+.button-group button:hover {
+     box-shadow: 0 0 10px rgba(0, 192, 160, 0.8); /* More intense glow on hover */
+}
+
+#submitBtn {
+    background-color: #00c0a0; /* Teal-like background for submit */
+    color: #0a1f28; /* Dark text for submit button */
+}
+
+#submitBtn:hover {
+    background-color: #00e0b0; /* Slightly lighter on hover */
+}
+
+#subscribeBtn {
+    background-color: #1a323f; /* Darker background for subscribe */
+    color: #00c0a0; /* Teal-like text for subscribe */
+    border: 1px solid #00c0a0; /* Teal-like border */
+}
+
+#subscribeBtn:hover {
+    background-color: #2a424f; /* Slightly darker background on hover */
+    color: #00ffcc; /* Lighter teal on hover */
+}
+
+textarea {
+    min-height: 100px; /* Give textarea some initial height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-top: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-result {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.2s;
+}
+
+.search-result:last-child {
+    border-bottom: none;
+}
+
+.search-result:hover {
+    background-color: #2a2a2a;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.track-name {
+    font-weight: 600;
+    color: #fff;
+}
+
+.track-artist {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.status-label {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: glow 2s infinite;
+}
+
+.status-label.accepting {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+.status-label.on-hold {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+    }
+}
+
+.status-label.on-hold {
+    animation: glow-red 2s infinite;
+}
+
+@keyframes glow-red {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+    }
+} 
